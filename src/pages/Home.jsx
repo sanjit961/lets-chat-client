@@ -20,6 +20,7 @@ function Home() {
 
   const fetchUserDetails = async () => {
     const URL = `${import.meta.env.VITE_BACKEND_URL}/api/user-details`;
+    console.log("URL", URL);
     try {
       const response = await axios({
         url: URL,
@@ -53,7 +54,7 @@ function Home() {
     });
 
     dispatch(setSocketConnection(socketConnection));
-    
+
     return () => {
       socketConnection.disconnect();
     };
